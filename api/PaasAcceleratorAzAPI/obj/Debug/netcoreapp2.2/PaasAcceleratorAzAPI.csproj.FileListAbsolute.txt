@@ -1,0 +1,14 @@
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\bin\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.deps.json
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\bin\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.runtimeconfig.json
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\bin\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.runtimeconfig.dev.json
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\bin\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.dll
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\bin\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.pdb
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.csproj.CoreCompileInputs.cache
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.RazorAssemblyInfo.cache
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.RazorAssemblyInfo.cs
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.AssemblyInfoInputs.cache
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.AssemblyInfo.cs
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.RazorTargetAssemblyInfo.cache
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.dll
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.pdb
+C:\PaaSAccelerators\api\PaasAcceleratorAzAPI\obj\Debug\netcoreapp2.2\PaasAcceleratorAzAPI.csprojAssemblyReference.cache

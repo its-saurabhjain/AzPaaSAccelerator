@@ -1,0 +1,105 @@
+﻿@model  AppServiceConfiguration
+@{
+    ViewData["Title"] = "App Migration Accelerator";
+}
+<h5>Collect Application Information</h5>
+<div class="text-center">
+    @using (Html.BeginForm("AppInformation", "Home", FormMethod.Post))
+    {
+        <table border="0" style="width:1020px;">
+            <tr>
+                <td align="left" style="height:26px;" valign="top">
+                    Existing Application Framework/Runtime:
+                    <p style="margin-left:26px;">
+                        @Html.RadioButton("appFramework", ".Net Framework 4.5", new { id = "appFramework_.net45" })
+                        @Html.Label("appFramework_.net45", ".Net Framework 4.5")<br />
+                        @Html.RadioButton("appFramework", ".Net Core", new { id = "appFramework_.netCore" })
+                        @Html.Label("appFramework_.netCore", ".Net Core")<br />
+                        @Html.RadioButton("appFramework", "Java", new { id = "appFramework_java" })
+                        @Html.Label("appFramework_java", "Java")<br />
+                        @Html.RadioButton("appFramework", "PHP", new { id = "appFramework_php" })
+                        @Html.Label("appFramework_php", "PHP")<br />
+                        @Html.RadioButton("appFramework", "Python", new { id = "appFramework_python" })
+                        @Html.Label("appFramework_python", "Python")
+                    </p>
+                </td>
+                <td align="left" style="height:26px;" valign="top">
+                    Deployment Option
+                    <p style="margin-left:26px;">
+                        @Html.RadioButton("deployment", "Zip", new { id = "deployment_Zip", @class = "deployment" })
+                        @Html.Label("deployment_Zip", "Zip")&nbsp;&nbsp;<input id="submit" type="button" value="UploadZip" onclick="location.href='@Url.Action("_fileUploadForm", "Home", new { id = 1})'"
+                                                                         style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" /><br />
+                        @Html.RadioButton("deployment", "FTP", new { id = "deployment_FTP", @class = "deployment" })
+                        @Html.Label("deployment_FTP", "FTP")<br />
+                        @Html.RadioButton("deployment", "LocalGit", new { id = "deployment_LGIT", @class = "deployment" })
+                        @Html.Label("deployment_LocalGit", "LocalGit")<br />
+                        @Html.RadioButton("deployment", "AzureDevOps", new { id = "deployment_AzDevOps", @class = "deployment" })
+                        @Html.Label("deployment_AzureDevOps", "AzureDevOps")
+                    </p>
+                </td>
+                <td align="left" style="height:26px;" valign="top">
+                    Containerize Your Application
+                    <p style="margin-left:26px;">
+                        @Html.RadioButton("container", "Windows", new { id = "container_Windows", @class = "containerApp" })
+                        @Html.Label("container_Windows", "Windows")<br />
+                        @Html.RadioButton("container", "Linux", new { id = "container_Linux", @class = "containerApp" })
+                        @Html.Label("container_Linux", "Linux")
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="3">
+                    <input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
+                </td>
+            </tr>
+        </table>
+    }
+    <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
+        <a href="#close" title="Close" class="modal-close-btn">X</a>
+        <div class="modal-content">
+            <div class="modal-body">
+                <form asp-controller="Home" asp-action="UploadFile" method="post" enctype="multipart/form-data">
+                    <p>
+                        <input name="zipFolder" type="file" id="zipFolderId" />
+                        <button type="submit" id="zipFolderId">Upload File</button>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        <script type="text/javascript">
+
+            $(function () { //Same as $(document).ready()
+                $(document).on("click", ".deployment", function () {
+                    if ($('#deployment_Zip').is(':checked')) {
+                        console.log("the forms is valid");
+                    }
+                    else {
+                        console.log("the forms info is not valid");
+                    }
+                });
+                //$('body').on('click', '.modal-link', function (e) {
+                //    e.preventDefault();
+                //    $("#modal-container").remove();
+                //    $.get($(this).data("targeturl"), function (data) {
+                //        $('<div id="modal-container" class="modal fade">' +
+                //            '<div class="modal-content" id= "modalbody" >' +
+                //            data + '</div></div>').modal();
+                //    });
+                //});
+                $('body').on('click', '.modal-link', function (e) {
+                    e.preventDefault();
+                    $("#modal-container").remove();
+                    $.get($(this).data("targeturl"), function (data) {
+                        $('<div id="modal-container" class="modal fade"><div class="modal-dialog modal-lg" style="width:500px;>' +
+                            '<div class="modal-content" id= "modalbody" >' +
+                            data +
+                            '</div></div></div>').modal();
+                    });
+                });
+            });
+        </script>
+    }
+</div>

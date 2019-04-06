@@ -1,0 +1,15 @@
+﻿<section id="loginForm" class="modal-dialog">
+    <form asp-controller="Home"
+          asp-action="UploadFile"
+          asp-route-returnurl="@ViewBag.ReturnUrl"
+          method="post"
+          class="form-horizontal"
+          role="form"
+          id="fileUpload"
+          enctype="multipart/form-data">
+            <p>
+                <input name="zipFolder" type="file" id="zipFolder1" style="display:block; visibility:visible" value="Project Folder" /><br />
+                <button type="submit" id="zipFolder2">Upload File</button>
+            </p>
+    </form>
+</section>

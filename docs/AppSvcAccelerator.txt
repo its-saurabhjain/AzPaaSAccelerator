@@ -1,0 +1,26 @@
+--Process Automation (Orchestrate processes)
+--Configuration Management (collect inventory, Track changes, configure desired state)
+--Shared capabilities RBAC, secure global store for variables, credentials, certificates, connections
+
+#SCENARIOS
+## Migrate onpremise ASP.Net MVC Standalone web application to Azure App Service
+#STEPS
+#1. Create a resource group   example- "PaasAcceleratorTest"
+
+
+
+
+
+
+#End. Delete resource group
+
+
+## Migrate onpremise .NetCore web application on Azure App Service
+## Migrate onpremise .Net web application with SQL DB (Entity Framework) on Azure App Service with Managed SQL DB
+## Migrate onpremise .Net web application with SQL DB (Entity Framework) & caching on Azure App Service with Managed SQL DB & Azure cache for Redis
+## Migrate onpremise .Net web application with MQ on Azure App Service with Service Bus
+
+
+
+
+

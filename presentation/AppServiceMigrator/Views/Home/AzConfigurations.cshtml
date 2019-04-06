@@ -1,0 +1,57 @@
+﻿@model AzAccountsViewModel
+@{
+    ViewData["Title"] = "Azure Configurations";
+}
+<style>
+    #main {
+        width: 204px;
+        height: 204px;
+    }
+
+    .form-textbox {
+        width: 125px;
+        height: 20px;
+        border: 1px solid #000;
+    }
+    .form-dropdown {
+        width: 200px;
+        height: 25px;
+        border: 1px solid #000;
+    }
+</style>
+
+<h5>Azure Configurations</h5>
+<div class="text-left">
+    @using (Html.BeginForm("AzConfigurations", "Home", FormMethod.Post))
+    {
+        <table border="0" style="width:1020px;">
+            <tr>
+                <td align="left" style="height:26px;" valign="top">
+                    <div>
+                        <p id="resGrp"> Azure Resource Group:
+                            @Html.DropDownListFor(m => m.Subscription, new SelectList(Model.ResourceGroupList), "Select Resource Group", new { id = "AzResGrp", @class = "form-dropdown" })
+                        </p>
+                        <p id="Location">Azure Location:
+                            @Html.TextBox("AzLocation", null, new { id = "AzLocation", @class = "form-textbox" })
+                        </p>
+                        <p id="AppSvcPlan">Azure App Service Plan:
+                            @Html.TextBox("AzAppSvcPlan", null, new { id = "AzAppSvcPlan", @class = "form-textbox" })
+                        </p>
+                        <p id="AppName">Azure Web App Name:
+                            @Html.TextBox("AzAppName", null, new { id = "AzAppName", @class= "form-textbox"})
+                        </p>
+                    </div>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+

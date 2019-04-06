@@ -1,0 +1,1 @@
+﻿Refer blogpost:- https://blog.jongallant.com/2017/11/azure-rest-apis-postman/

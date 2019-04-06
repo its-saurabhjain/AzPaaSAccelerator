@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{72582952-AAB6-4FBD-9315-5309308C1980}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{B126803E-3C1C-4E72-8497-84A855374D6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "agents", "agents", "{D2522DE6-134A-40EE-962C-84EDDA0F5A3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ps", "ps", "{43477940-9E4B-438A-A259-167F8F8A2C1E}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\ps\appSvcDeployment.ps1 = scripts\ps\appSvcDeployment.ps1
+		scripts\ps\appSvcDeploymentStandAloneApp.ps1 = scripts\ps\appSvcDeploymentStandAloneApp.ps1
+		scripts\ps\appSvcUnDeployment.ps1 = scripts\ps\appSvcUnDeployment.ps1
+		scripts\ps\azSetServicePrincipal.ps1 = scripts\ps\azSetServicePrincipal.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{FC17C59E-89A3-41B3-A121-3B6A4E589DC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nodeJS", "nodeJS", "{A155B0D6-BF5A-4B52-948A-A143B7F1C060}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{59FCF119-7623-489B-B7FC-9FFCF7AE82BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{64DEEFC4-B643-4B90-8D63-13892B2563E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{63520F5C-F4FC-40CD-BB0A-9C14EA74D725}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{5831C666-C444-47F3-8B16-C427CDA40834}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "yaml", "yaml", "{DBD0622A-069D-4B10-BA0F-C2134138C03C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "engine", "engine", "{5C91303C-7C9B-47E4-B3AC-8D5415070123}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "azure-pipeline", "azure-pipeline", "{1141B965-2429-42BA-8354-FA8CCE96E945}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{5A1D1052-75E3-46D8-834B-DA3DC859FFF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{DD6DC966-6654-4B8F-80D3-BB9F1F992A49}"
+	ProjectSection(SolutionItems) = preProject
+		docs\AppSvcAccelerator.txt = docs\AppSvcAccelerator.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{3FEAC0C5-57C2-4D43-8DA3-421A057ADD0D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaasAcceleratorAzAPI", "api\PaasAcceleratorAzAPI\PaasAcceleratorAzAPI.csproj", "{E32D5ADF-61DC-44F4-AD0D-46E914EDF388}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreJobReceiver", "engine\CoreJobReceiver\CoreJobReceiver.csproj", "{FDC7C5E7-1ECF-4F3A-BDC8-0666A8E367F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreStorageService", "engine\CoreStorageService\CoreStorageService.csproj", "{8DF4F9AC-0FDC-447F-9BC1-7B6D3944142D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAcceleratorEngine", "engine\CoreAcceleratorEngine\CoreAcceleratorEngine.csproj", "{7C212241-94E5-4FD8-8E5E-94D0D02EE497}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppServiceMigrator", "presentation\AppServiceMigrator\AppServiceMigrator.csproj", "{D749B10E-7894-4684-92D8-FC5A925E9606}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E32D5ADF-61DC-44F4-AD0D-46E914EDF388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32D5ADF-61DC-44F4-AD0D-46E914EDF388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32D5ADF-61DC-44F4-AD0D-46E914EDF388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32D5ADF-61DC-44F4-AD0D-46E914EDF388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC7C5E7-1ECF-4F3A-BDC8-0666A8E367F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC7C5E7-1ECF-4F3A-BDC8-0666A8E367F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC7C5E7-1ECF-4F3A-BDC8-0666A8E367F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC7C5E7-1ECF-4F3A-BDC8-0666A8E367F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF4F9AC-0FDC-447F-9BC1-7B6D3944142D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF4F9AC-0FDC-447F-9BC1-7B6D3944142D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF4F9AC-0FDC-447F-9BC1-7B6D3944142D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF4F9AC-0FDC-447F-9BC1-7B6D3944142D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C212241-94E5-4FD8-8E5E-94D0D02EE497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C212241-94E5-4FD8-8E5E-94D0D02EE497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C212241-94E5-4FD8-8E5E-94D0D02EE497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C212241-94E5-4FD8-8E5E-94D0D02EE497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D749B10E-7894-4684-92D8-FC5A925E9606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D749B10E-7894-4684-92D8-FC5A925E9606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D749B10E-7894-4684-92D8-FC5A925E9606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D749B10E-7894-4684-92D8-FC5A925E9606}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43477940-9E4B-438A-A259-167F8F8A2C1E} = {72582952-AAB6-4FBD-9315-5309308C1980}
+		{FC17C59E-89A3-41B3-A121-3B6A4E589DC2} = {72582952-AAB6-4FBD-9315-5309308C1980}
+		{A155B0D6-BF5A-4B52-948A-A143B7F1C060} = {72582952-AAB6-4FBD-9315-5309308C1980}
+		{5831C666-C444-47F3-8B16-C427CDA40834} = {63520F5C-F4FC-40CD-BB0A-9C14EA74D725}
+		{DBD0622A-069D-4B10-BA0F-C2134138C03C} = {63520F5C-F4FC-40CD-BB0A-9C14EA74D725}
+		{E32D5ADF-61DC-44F4-AD0D-46E914EDF388} = {B126803E-3C1C-4E72-8497-84A855374D6D}
+		{FDC7C5E7-1ECF-4F3A-BDC8-0666A8E367F1} = {5C91303C-7C9B-47E4-B3AC-8D5415070123}
+		{8DF4F9AC-0FDC-447F-9BC1-7B6D3944142D} = {5C91303C-7C9B-47E4-B3AC-8D5415070123}
+		{7C212241-94E5-4FD8-8E5E-94D0D02EE497} = {5C91303C-7C9B-47E4-B3AC-8D5415070123}
+		{D749B10E-7894-4684-92D8-FC5A925E9606} = {3FEAC0C5-57C2-4D43-8DA3-421A057ADD0D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0EA48EC-FEA7-4241-8171-5B14A9F2E446}
+	EndGlobalSection
+EndGlobal

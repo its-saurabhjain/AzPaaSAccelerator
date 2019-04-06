@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Acknowledgement";
+}
+<h5>Acknowledgement</h5>
+<table border="0" style="width:1020px;">
+    <tr>
+        <td align="left" style="height:26px;" valign="top">
+            <div>Application Migration Task ID <span style="color:maroon">@ViewBag.ID </span> has been submitted to the engine. Updates to the migration progress can be viewed on Information Updates page,<a asp-controller="Home" asp-action="InformationUpdates">click here</a> to get updates on your migration.</div>
+            
+        </td>
+    </tr>
+    <tr>
+        <td align="left" style="height:26px;" valign="top">
+            <input id="submit" type="button" onclick="location.href='@Url.Action("AppInformation", "Home")'"
+                   value="Start Over" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,53 @@
+﻿@model AppServiceConfiguration;
+@{
+    ViewData["Title"] = "ReviewInformation";
+}
+<style>
+    #main {
+        width: 204px;
+        height: 204px;
+    }
+
+    .form-textbox {
+        width: 200px;
+        height: 20px;
+        border: 1px solid #000;
+    }
+
+    .form-dropdown {
+        width: 200px;
+        height: 25px;
+        border: 1px solid #000;
+    }
+</style>
+<h5>Review & Submit Information</h5>
+
+@using (Html.BeginForm("ReviewInformation", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <table border="0" style="width:1020px;">
+        <tr>
+            <td align="left" style="height:26px;" valign="top">
+                <div>Application and Azure Configuration Information goes here. Edit Information or submit migration task</div>
+
+                <div>
+                    <table>
+                        <tr><td>@Html.LabelFor(m => m.ResourceGrp):</td><td>@Html.TextBoxFor(m => m.ResourceGrp, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.AppRuntime):</td><td>@Html.TextBoxFor(m => m.AppRuntime, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.DeploymentType):</td><td>@Html.TextBoxFor(m => m.DeploymentType, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.zipDirectory):</td><td>@Html.TextBoxFor(m => m.zipDirectory, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.Container):</td><td>@Html.TextBoxFor(m => m.Container, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.location):</td><td>@Html.TextBoxFor(m => m.location, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.appSvcPlan):</td><td>@Html.TextBoxFor(m => m.appSvcPlan, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.paaswebapp):</td><td>@Html.TextBoxFor(m => m.paaswebapp, new { @class = "form-textbox" })</td></tr>
+                    </table>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td align="left" style="height:26px;" valign="top">
+                <input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
+            </td>
+        </tr>
+    </table>
+}

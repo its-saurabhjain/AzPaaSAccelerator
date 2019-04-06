@@ -1,0 +1,10 @@
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\bin\Debug\netcoreapp2.2\CoreAcceleratorEngine.deps.json
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\bin\Debug\netcoreapp2.2\CoreAcceleratorEngine.runtimeconfig.json
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\bin\Debug\netcoreapp2.2\CoreAcceleratorEngine.runtimeconfig.dev.json
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\bin\Debug\netcoreapp2.2\CoreAcceleratorEngine.dll
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\bin\Debug\netcoreapp2.2\CoreAcceleratorEngine.pdb
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.csproj.CoreCompileInputs.cache
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.AssemblyInfoInputs.cache
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.AssemblyInfo.cs
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.dll
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.pdb

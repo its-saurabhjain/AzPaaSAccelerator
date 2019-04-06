@@ -1,0 +1,14 @@
+C:\PaaSAccelerators\IStorageService\obj\Debug\netcoreapp2.2\StorageService.csprojAssemblyReference.cache
+C:\PaaSAccelerators\IStorageService\obj\Debug\netcoreapp2.2\StorageService.csproj.CoreCompileInputs.cache
+C:\PaaSAccelerators\IStorageService\obj\Debug\netcoreapp2.2\StorageService.AssemblyInfoInputs.cache
+C:\PaaSAccelerators\IStorageService\obj\Debug\netcoreapp2.2\StorageService.AssemblyInfo.cs
+C:\PaaSAccelerators\IStorageService\bin\Debug\netcoreapp2.2\StorageService.deps.json
+C:\PaaSAccelerators\IStorageService\bin\Debug\netcoreapp2.2\StorageService.dll
+C:\PaaSAccelerators\IStorageService\bin\Debug\netcoreapp2.2\StorageService.pdb
+C:\PaaSAccelerators\IStorageService\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\PaaSAccelerators\IStorageService\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.dll
+C:\PaaSAccelerators\IStorageService\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\PaaSAccelerators\IStorageService\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.xml
+C:\PaaSAccelerators\IStorageService\obj\Debug\netcoreapp2.2\StorageService.csproj.CopyComplete
+C:\PaaSAccelerators\IStorageService\obj\Debug\netcoreapp2.2\StorageService.dll
+C:\PaaSAccelerators\IStorageService\obj\Debug\netcoreapp2.2\StorageService.pdb

@@ -1,0 +1,11 @@
+C:\PaaSAccelerators\engine\CoreJobReceiver\bin\Release\netcoreapp2.2\CoreJobReceiver.deps.json
+C:\PaaSAccelerators\engine\CoreJobReceiver\bin\Release\netcoreapp2.2\CoreJobReceiver.runtimeconfig.json
+C:\PaaSAccelerators\engine\CoreJobReceiver\bin\Release\netcoreapp2.2\CoreJobReceiver.runtimeconfig.dev.json
+C:\PaaSAccelerators\engine\CoreJobReceiver\bin\Release\netcoreapp2.2\CoreJobReceiver.dll
+C:\PaaSAccelerators\engine\CoreJobReceiver\bin\Release\netcoreapp2.2\CoreJobReceiver.pdb
+C:\PaaSAccelerators\engine\CoreJobReceiver\obj\Release\netcoreapp2.2\CoreJobReceiver.csprojAssemblyReference.cache
+C:\PaaSAccelerators\engine\CoreJobReceiver\obj\Release\netcoreapp2.2\CoreJobReceiver.csproj.CoreCompileInputs.cache
+C:\PaaSAccelerators\engine\CoreJobReceiver\obj\Release\netcoreapp2.2\CoreJobReceiver.AssemblyInfoInputs.cache
+C:\PaaSAccelerators\engine\CoreJobReceiver\obj\Release\netcoreapp2.2\CoreJobReceiver.AssemblyInfo.cs
+C:\PaaSAccelerators\engine\CoreJobReceiver\obj\Release\netcoreapp2.2\CoreJobReceiver.dll
+C:\PaaSAccelerators\engine\CoreJobReceiver\obj\Release\netcoreapp2.2\CoreJobReceiver.pdb
