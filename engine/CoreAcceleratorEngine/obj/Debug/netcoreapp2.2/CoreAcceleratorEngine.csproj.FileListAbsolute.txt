@@ -8,3 +8,4 @@ C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcc
 C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.AssemblyInfo.cs
 C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.dll
 C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.pdb
+C:\PaaSAccelerators\engine\CoreAcceleratorEngine\obj\Debug\netcoreapp2.2\CoreAcceleratorEngine.csprojAssemblyReference.cache

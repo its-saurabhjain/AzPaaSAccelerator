@@ -1,0 +1,11 @@
+C:\PaaSAccelerators\agents\ContainerConfigurator\bin\Debug\netcoreapp2.2\ContainerConfigurator.deps.json
+C:\PaaSAccelerators\agents\ContainerConfigurator\bin\Debug\netcoreapp2.2\ContainerConfigurator.runtimeconfig.json
+C:\PaaSAccelerators\agents\ContainerConfigurator\bin\Debug\netcoreapp2.2\ContainerConfigurator.runtimeconfig.dev.json
+C:\PaaSAccelerators\agents\ContainerConfigurator\bin\Debug\netcoreapp2.2\ContainerConfigurator.dll
+C:\PaaSAccelerators\agents\ContainerConfigurator\bin\Debug\netcoreapp2.2\ContainerConfigurator.pdb
+C:\PaaSAccelerators\agents\ContainerConfigurator\obj\Debug\netcoreapp2.2\ContainerConfigurator.csproj.CoreCompileInputs.cache
+C:\PaaSAccelerators\agents\ContainerConfigurator\obj\Debug\netcoreapp2.2\ContainerConfigurator.AssemblyInfoInputs.cache
+C:\PaaSAccelerators\agents\ContainerConfigurator\obj\Debug\netcoreapp2.2\ContainerConfigurator.AssemblyInfo.cs
+C:\PaaSAccelerators\agents\ContainerConfigurator\obj\Debug\netcoreapp2.2\ContainerConfigurator.dll
+C:\PaaSAccelerators\agents\ContainerConfigurator\obj\Debug\netcoreapp2.2\ContainerConfigurator.pdb
+C:\PaaSAccelerators\agents\ContainerConfigurator\obj\Debug\netcoreapp2.2\ContainerConfigurator.csprojAssemblyReference.cache

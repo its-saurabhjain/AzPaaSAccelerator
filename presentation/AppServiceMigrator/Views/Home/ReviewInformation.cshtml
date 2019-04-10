@@ -28,13 +28,13 @@
         <tr>
             <td align="left" style="height:26px;" valign="top">
                 <div>Application and Azure Configuration Information goes here. Edit Information or submit migration task</div>
-
                 <div>
                     <table>
                         <tr><td>@Html.LabelFor(m => m.ResourceGrp):</td><td>@Html.TextBoxFor(m => m.ResourceGrp, new { @class = "form-textbox" })</td></tr>
                         <tr><td>@Html.LabelFor(m => m.AppRuntime):</td><td>@Html.TextBoxFor(m => m.AppRuntime, new { @class = "form-textbox" })</td></tr>
                         <tr><td>@Html.LabelFor(m => m.DeploymentType):</td><td>@Html.TextBoxFor(m => m.DeploymentType, new { @class = "form-textbox" })</td></tr>
-                        <tr><td>@Html.LabelFor(m => m.zipDirectory):</td><td>@Html.TextBoxFor(m => m.zipDirectory, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.zipFileName):</td><td>@Html.TextBoxFor(m => m.zipFileName, new { @class = "form-textbox" })</td></tr>
+                        <tr><td>@Html.LabelFor(m => m.appdirectory):</td><td>@Html.TextBoxFor(m => m.appdirectory, new { @class = "form-textbox" })</td></tr>
                         <tr><td>@Html.LabelFor(m => m.Container):</td><td>@Html.TextBoxFor(m => m.Container, new { @class = "form-textbox" })</td></tr>
                         <tr><td>@Html.LabelFor(m => m.location):</td><td>@Html.TextBoxFor(m => m.location, new { @class = "form-textbox" })</td></tr>
                         <tr><td>@Html.LabelFor(m => m.appSvcPlan):</td><td>@Html.TextBoxFor(m => m.appSvcPlan, new { @class = "form-textbox" })</td></tr>
@@ -45,7 +45,7 @@
             </td>
         </tr>
         <tr>
-            <td align="left" style="height:26px;" valign="top">
+            <td align="right" style="height:26px;" valign="top">
                 <input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
             </td>
         </tr>

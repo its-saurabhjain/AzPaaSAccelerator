@@ -61,11 +61,15 @@ namespace PaaSAcceleratorEngine
                         string location = jo["location"].ToString().Replace(" ", "@");
                         string appSvcPlan = jo["appSvcPlan"].ToString();
                         string paasweb = jo["paaswebapp"].ToString();
-                        string scriptFile = @"C:\PaaSAccelerators\scripts\ps\appSvcDeploymentTemp.ps1" +
+                        string zipFileServer = jo["appdirectory"].ToString();
+                        string ZipFileName = jo["zipFileName"].ToString();
+                        string scriptFile = @"C:\PaaSAccelerators\scripts\ps\appSvcDeploymentStandAloneApp.ps1" +
                         " -resourceGroup " + rg +
                         " -location " + location +
                         " -appSvcPlan " + appSvcPlan +
-                        " -paaswebapp " + paasweb;
+                        " -paaswebapp " + paasweb +
+                        " -zipFileServer " + zipFileServer +
+                        " -ZipFileName " + ZipFileName;
                         Console.WriteLine(scriptFile);
                         RunPowershellScript(scriptFile);
                     }

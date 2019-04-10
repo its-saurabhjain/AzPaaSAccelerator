@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using MigrationAcceleratorApp.Models;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
@@ -15,18 +16,24 @@ namespace MigrationAcceleratorApp.Controllers
 {
     public class HomeController : Controller
     {
+        IConfiguration _config;
+        public HomeController(IConfiguration config)
+        {
+            _config = config;
+        }
         //Startup View
         public IActionResult AppInformation()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult AppInformation(string appFramework, string deployment, string zipFolder, string container)
+        public IActionResult AppInformation(string appFramework, string deployment, string zipFile, string container)
         {
             AppServiceConfiguration appSvcCfg = new AppServiceConfiguration();
             appSvcCfg.AppRuntime = appFramework;
             appSvcCfg.DeploymentType = deployment;
-            appSvcCfg.appdirectory = zipFolder;
+            appSvcCfg.appdirectory = _config.GetValue<string>("FileServer");
+            appSvcCfg.zipFileName = zipFile;
             appSvcCfg.Container = container;
             string json = JsonConvert.SerializeObject(appSvcCfg);
             TempData["appInfo"] = json;
@@ -54,8 +61,8 @@ namespace MigrationAcceleratorApp.Controllers
             appSvcCfg.AppRuntime = appSvcCfgTemp.AppRuntime;
             appSvcCfg.DeploymentType = appSvcCfgTemp.DeploymentType;
             appSvcCfg.appdirectory = appSvcCfgTemp.appdirectory;
+            appSvcCfg.zipFileName = appSvcCfgTemp.zipFileName;
             appSvcCfg.Container = appSvcCfgTemp.Container;
-
             return View("ReviewInformation", appSvcCfg);
         }
 
@@ -114,13 +121,17 @@ namespace MigrationAcceleratorApp.Controllers
         {
             if (zipFolder == null || zipFolder.Length == 0)
                 return Content("file not selected");
-           var path = @"C:\PaaSAccelerators\FileServer";
-           using (var stream = new FileStream(Path.Combine(path, zipFolder.FileName), FileMode.Create))
+           var path = _config.GetValue<string>("FileServer");
+            using (var stream = new FileStream(Path.Combine(path, zipFolder.FileName), FileMode.Create))
            {
                 await zipFolder.CopyToAsync(stream);
             }
+            ViewBag.zipFile= zipFolder.FileName;
+            TempData["zipFile"] = zipFolder.FileName;
 
-            return RedirectToAction("AppInformation");
+            string json = (string)TempData["appInfo"];
+            AppServiceConfiguration appSvcCfgTemp = JsonConvert.DeserializeObject<AppServiceConfiguration>(json);
+            return RedirectToAction("AppInformation", appSvcCfgTemp);
         }
     }
 }

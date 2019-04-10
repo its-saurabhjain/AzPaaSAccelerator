@@ -9,6 +9,13 @@ $webappname=  $paaswebapp + $(Get-Random -Minimum 1 -Maximum 100)
 $appdirectory= 'C:\PaaSAccelerators\samples\dotNetFramework\ASP.NetMVC\ASP.NetMVC-Standalone\*'
 $zipDirectory = 'C:\PaaSAccelerators\samples\dotNetFramework\ASP.NetMVC\'
 
+#Retrieve value from Json object
+ #$val = $(az account list -o json)
+ #$x = $val | ConvertFrom-Json
+ #$x[0].cloudName
+ #$grpList =$(az group list -o json) | ConvertFrom-Json
+ #$grpList[0].id
+
 az group create --name $resourceGroup --location $location
 echo "Resource Group Created......."
 # Create an App Service plan in `FREE` tier.

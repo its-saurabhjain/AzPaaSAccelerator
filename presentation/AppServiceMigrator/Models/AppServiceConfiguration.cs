@@ -14,7 +14,7 @@ namespace MigrationAcceleratorApp.Models
         public string appSvcPlan { get; set; }
         public string paaswebapp { get; set; }
         public string appdirectory { get; set; }
-        public string zipDirectory { get; set; }
+        public string zipFileName { get; set; }
         public string DeploymentType { get; set; }
         public string AppRuntime { get; set; }
         public string Container { get; set; }
