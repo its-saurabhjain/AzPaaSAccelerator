@@ -36,12 +36,12 @@
                         @Html.Label("deployment_Zip", "Zip")&nbsp;&nbsp;
                         @if (zipfilename == null)
                         {
-                            <input id="submit" type="button" value="UploadZip" onclick="location.href='@Url.Action("_fileUploadForm", "Home", new { id = 1 })'"
-                                   style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
+                            <input id="uploadZip" type="button" value="UploadZip" onclick="location.href='@Url.Action("_fileUploadForm", "Home", new { id = 1 })'"
+                                   style="border:0px;background:transparent;text-decoration:none;cursor:pointer;visibility:hidden" />
                         }
                         else
                         {
-                            <input id="submit" type="button" value='@zipfilename.ToString()' onclick="location.href='@Url.Action("_fileUploadForm", "Home", new { id = 1 })'"
+                            <input id="uploadZip" type="button" value='@zipfilename.ToString()' onclick="location.href='@Url.Action("_fileUploadForm", "Home", new { id = 1 })'"
                                    style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
                             @Html.Hidden("zipFile", @TempData["zipFile"])
                         }<br />
@@ -94,6 +94,12 @@
                 }
 
                 $(document).on("click", ".deployment", function () {
+                    if ($('#deployment_Zip').is(':checked')) {
+                        document.getElementById("uploadZip").style.visibility = 'visible';
+                    }
+                    else {
+                        document.getElementById("uploadZip").style.visibility = 'hidden';
+                    }
                     if ($('#deployment_GIT').is(':checked')) {
                         document.getElementById("gitRepoUrl").style.visibility = 'visible';
                     }

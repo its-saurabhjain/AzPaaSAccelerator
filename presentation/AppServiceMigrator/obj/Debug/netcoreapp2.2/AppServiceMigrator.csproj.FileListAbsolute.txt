@@ -41,3 +41,4 @@ C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razo
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\Tier4Configuration.g.cshtml.cs
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\Tier5Configuration.g.cshtml.cs
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\TemplateReview.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\WebJob\WebJob.g.cshtml.cs
