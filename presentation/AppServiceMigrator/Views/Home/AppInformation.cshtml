@@ -6,7 +6,7 @@
     var zipfilename = TempData["zipFile"];
     var gitRepo = TempData["gitRepo"];
     }
-<h5>Collect Application Information</h5>
+<b>Collect Application Details</b>
 <div class="text-center">
     @using (Html.BeginForm("AppInformation", "Home", FormMethod.Post))
     {
@@ -15,7 +15,7 @@
                 <td align="left" style="height:26px;" valign="top">
                     Existing Application Framework/Runtime:
                     <p style="margin-left:26px;">
-                        @Html.RadioButton("appFramework", ".Net Framework 4.5", new { Checked = "checked", id = "appFramework_.net45"})
+                        @Html.RadioButton("appFramework", ".Net Framework 4.5", new { Checked = "checked", id = "appFramework_.net45" })
                         @Html.Label("appFramework_.net45", ".Net Framework 4.5")<br />
                         @Html.RadioButton("appFramework", ".Net Core", new { id = "appFramework_.netCore" })
                         @Html.Label("appFramework_.netCore", ".Net Core")<br />
@@ -24,7 +24,9 @@
                         @Html.RadioButton("appFramework", "PHP", new { id = "appFramework_php" })
                         @Html.Label("appFramework_php", "PHP")<br />
                         @Html.RadioButton("appFramework", "Python", new { id = "appFramework_python" })
-                        @Html.Label("appFramework_python", "Python")
+                        @Html.Label("appFramework_python", "Python")<br/>
+                        @Html.RadioButton("appFramework", "Node", new { id = "appFramework_node" })
+                        @Html.Label("appFramework_node", "Node")
                     </p>
                 </td>
                 <td align="left" style="height:26px;" valign="top">
@@ -52,7 +54,12 @@
                         <input id="gitRepoUrl" name="gitRepoUrl" type="text" value="https://github.com/Azure-Samples/aci-helloworld.git" style="visibility:hidden" />
                         <br />
                         @Html.RadioButton("deployment", "AzureDevOps", new { id = "deployment_AzDevOps", @class = "deployment" })
-                        @Html.Label("deployment_AzureDevOps", "AzureDevOps")
+                        @Html.Label("deployment_AzureDevOps", "AzureDevOps")<br />
+                        @Html.RadioButton("deployment", "ContiniousDeployment", new { id = "deployment_continious", @class = "deployment" })
+                        @Html.Label("deployment_continious", "ContiniousDeployment")<br />
+                        @Html.RadioButton("deployment", "Template", new { id = "deployment_template", @class = "deployment" })
+                        @Html.Label("deployment_template", "Template")<br />
+
                     </p>
                 </td>
                 <td align="left" style="height:26px;" valign="top">

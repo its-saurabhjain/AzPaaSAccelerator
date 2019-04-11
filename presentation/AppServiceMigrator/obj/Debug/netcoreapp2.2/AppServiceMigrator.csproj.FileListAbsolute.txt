@@ -32,3 +32,6 @@ C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\AppS
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\AppServiceMigrator.dll
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\AppServiceMigrator.pdb
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\AppServiceMigrator.csproj.CopyComplete
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Home\_BindSSLCertificate.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Configuration\AppConfiguration.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Monitor\AppMonitor.g.cshtml.cs

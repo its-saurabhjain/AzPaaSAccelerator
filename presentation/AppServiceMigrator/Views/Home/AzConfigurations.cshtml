@@ -2,6 +2,9 @@
 @{
     ViewData["Title"] = "Azure Configurations";
 }
+@{
+    var isContainerized = TempData["container"];
+}
 <style>
     #main {
         width: 204px;
@@ -13,6 +16,7 @@
         height: 20px;
         border: 1px solid #000;
     }
+
     .form-dropdown {
         width: 200px;
         height: 25px;
@@ -24,46 +28,72 @@
 <div class="text-left">
     @using (Html.BeginForm("AzConfigurations", "Home", FormMethod.Post))
     {
-    <table>
-        <tr>
-            <td align="left" style="height:26px;" valign="top">
-                <table border="1" id="AzAppService">
-                <tr>
-                    <td>@Html.Label("resGrp", "Azure Resource Group"):</td>
-                    <td>@Html.DropDownListFor(m => m.Subscription, new SelectList(Model.ResourceGroupList), "Select Resource Group", new { id = "AzResGrp", @class = "form-dropdown" })</td>
-                </tr>
-                <tr>
-                    <td>@Html.Label("Location", "Azure Location:")</td>
-                    <td>@Html.TextBox("AzLocation", null, new { id = "AzLocation", @class = "form-textbox" })</td>
-                </tr>
-                <tr>
-                    <td>@Html.Label("AppSvcPlan", "Azure App Service Plan:")</td>
-                    <td>@Html.TextBox("AzAppSvcPlan", null, new { id = "AzAppSvcPlan", @class = "form-textbox" })</td>
-                </tr>
-                <tr>
-                    <td>@Html.Label("AppName", "Azure Web App Name:")</td>
-                    <td>@Html.TextBox("AzAppName", null, new { id = "AzAppName", @class = "form-textbox" })</td>
-                </tr>
-                <tr>
-                   <td align="right" colspan="2"><input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" /></td>
-                </tr>
-               </table>
-            </td>
-            <td align="left" style="height:26px;" valign="top">
-                <table>
-                    <tr>
-                        <td>@Html.Label("AzContainerRegistry", "Azure Container Registry:")</td>
-                        <td>@Html.TextBox("AzContainerRegistry", null, new { id = "AzContainerRegistry", @class = "form-textbox" })</td>
-                    </tr>
-                    <tr>
-                        <td>@Html.Label("ContainerTag", "Container Tag:")</td>
-                        <td>@Html.TextBox("ContainerTag", null, new { id = "ContainerTag", @class = "form-textbox" })</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    
+        <table>
+            <tr>
+                <td align="left" style="height:26px;" valign="top">
+                    <table border="0" id="AzAppService">
+                        <tr>
+                            <td>@Html.Label("resGrp", "Azure Resource Group"):</td>
+                            <td>@Html.DropDownListFor(m => m.Subscription, new SelectList(Model.ResourceGroupList), "Select Resource Group", new { id = "AzResGrp", @class = "form-dropdown" })</td>
+                            <td>@Html.TextBox("resGrp", null, new { id = "resGrp", @class = "form-textbox" })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.Label("Location", "Azure Location:")</td>
+                            <td>@Html.TextBox("AzLocation", null, new { id = "AzLocation", @class = "form-textbox" })</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>@Html.Label("AppSvcPlan", "Azure App Service Plan:")</td>
+                            <td>@Html.TextBox("AzAppSvcPlan", null, new { id = "AzAppSvcPlan", @class = "form-textbox" })</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>@Html.Label("AppName", "Azure Web App Name:")</td>
+                            <td>@Html.TextBox("AzAppName", null, new { id = "AzAppName", @class = "form-textbox" })</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2">
+                                <input id="submit" type="button" value="Bind SSL Certificate" onclick="location.href='@Url.Action("_BindSSLCertificate", "Home", new { id = 1 })'"
+                                       style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
+                            </td>
+                            <td></td>
+
+                        </tr>
+                    </table>
+                </td>
+                <td align="left" style="height:26px;" valign="top">
+                    @if (isContainerized != null)
+                    {
+                        <table>
+                            <tr>
+                                <td>@Html.Label("AzContainerRegistry", "Azure Container Registry:")</td>
+                                <td>@Html.TextBox("AzContainerRegistry", null, new { id = "AzContainerRegistry", @class = "form-textbox" })</td>
+                            </tr>
+                            <tr>
+                                <td>@Html.Label("ContainerTag", "Container Tag:")</td>
+                                <td>@Html.TextBox("ContainerTag", null, new { id = "ContainerTag", @class = "form-textbox" })</td>
+                            </tr>
+                        </table>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="2"><input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" /></td>
+            </tr>
+        </table>
+    }
+    @section Scripts {
+        <script type="text/javascript">
+            $(function () { //Same as $(document).ready()
+                $(document).on("click", ".form-dropdown", function () {
+                    var e = document.getElementById("AzResGrp");
+                    resGrp.value = e.options[e.selectedIndex].value;
+                });
+            });
+
+        </script>
     }
 </div>
 

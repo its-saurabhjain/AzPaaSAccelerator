@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MigrationAcceleratorApp.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RabbitMQ.Client;
 
 namespace MigrationAcceleratorApp.Controllers
@@ -27,7 +29,7 @@ namespace MigrationAcceleratorApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AppInformation(string appFramework, string deployment, string zipFile, string container, string gitRepoUrl)
+        public async Task<IActionResult> AppInformation(string appFramework, string deployment, string zipFile, string container, string gitRepoUrl)
         {
             AppServiceConfiguration appSvcCfg = new AppServiceConfiguration();
             appSvcCfg.AppRuntime = appFramework;
@@ -38,22 +40,36 @@ namespace MigrationAcceleratorApp.Controllers
             appSvcCfg.GitUrl = gitRepoUrl;
             string json = JsonConvert.SerializeObject(appSvcCfg);
             TempData["appInfo"] = json;
-            //Invoke API and get Resource Group List
+            TempData["container"] = container;
+            //Get Resource group and subscription information from Az API
             List<string> resourceGrpList = new List<string>();
-            resourceGrpList.Add("PaaSAcceleratorTest");
-            resourceGrpList.Add("AppServiceGroup");
-            resourceGrpList.Add("CloudServiceGroup");
+            string resourceGrps = await GetDataAsync();
+            if (resourceGrps != null)
+            {
+                string rs = resourceGrps.Replace("[", "").Replace("]", "").Replace("\"", "");
+                string[] grpList = rs.Split(",");
+                foreach (var o in grpList)
+                {
+                    resourceGrpList.Add(o.ToString());
+                }
+            }
+            else
+            {
+                resourceGrpList.Add("PaaSAcceleratorTest");
+                resourceGrpList.Add("AppServiceGroup");
+                resourceGrpList.Add("CloudServiceGroup");
 
+            }
             var model = new AzAccountsViewModel();
             model.ResourceGroupList = resourceGrpList;
             TempData.Keep("appInfo");
             return View("AzConfigurations", model);
         }
         [HttpPost]
-        public IActionResult AzConfigurations(string Subscription, string AzLocation, string AzAppSvcPlan, string AzAppName, string AzContainerRegistry, string ContainerTag)
+        public IActionResult AzConfigurations(string resGrp, string AzLocation, string AzAppSvcPlan, string AzAppName, string AzContainerRegistry, string ContainerTag)
         {
             AppServiceConfiguration appSvcCfg = new AppServiceConfiguration();
-            appSvcCfg.ResourceGrp = Subscription;
+            appSvcCfg.ResourceGrp = resGrp;
             appSvcCfg.location = AzLocation;
             appSvcCfg.appSvcPlan = AzAppSvcPlan;
             appSvcCfg.paaswebapp = AzAppName;
@@ -134,6 +150,44 @@ namespace MigrationAcceleratorApp.Controllers
             TempData["zipFile"] = zipFolder.FileName;
 
             return RedirectToAction("AppInformation");
+        }
+
+        public ActionResult _BindSSLCertificate(int Id)
+        {
+            ViewBag.Id = Id;
+            return PartialView();
+        }
+        [HttpPost]
+        public async Task<IActionResult> _BindSSLCertificate(IFormFile zipFolder)
+        {
+            if (zipFolder == null || zipFolder.Length == 0)
+                return Content("file not selected");
+            var path = _config.GetValue<string>("FileServer");
+            using (var stream = new FileStream(Path.Combine(path, zipFolder.FileName), FileMode.Create))
+            {
+                await zipFolder.CopyToAsync(stream);
+            }
+            ViewBag.zipFile = zipFolder.FileName;
+            TempData["zipFile"] = zipFolder.FileName;
+
+            return RedirectToAction("AppInformation");
+        }
+        private async Task<string> GetDataAsync() {
+            string resultContent = null;
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("http://localhost:55831/api/azrm");
+                    var result = await client.GetAsync("http://localhost:55831/api/azrm");
+                    resultContent = await result.Content.ReadAsStringAsync();
+                }
+                catch (Exception ex) {
+
+                }
+                return resultContent;
+            }
+
         }
     }
 }

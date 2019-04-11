@@ -33,6 +33,7 @@ namespace PaasAcceleratorAzAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
 
             app.UseMvc();

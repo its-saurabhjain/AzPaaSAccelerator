@@ -21,13 +21,21 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-               <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="align-items-lg-center"><b>App Service Migrations</b></div>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <h3>Azure App Service Migrations</h3>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AppInformation">Deploy</a>
                         </li>
-                   </ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Configuration" asp-action="AppConfiguration">Configure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Monitor" asp-action="AppMonitor">Monitor</a>
+                        </li>
+                    </ul>
                 </div>
+                
             </div>
         </nav>
     </header>
@@ -37,7 +45,6 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2019 - MigrationAcceleratorApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

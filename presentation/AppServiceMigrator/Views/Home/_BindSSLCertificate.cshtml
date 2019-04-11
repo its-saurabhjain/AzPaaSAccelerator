@@ -1,0 +1,15 @@
+﻿<section id="sslUploadForm" class="modal-dialog">
+    <form asp-controller="Home"
+          asp-action="UploadFile"
+          asp-route-returnurl="@ViewBag.ReturnUrl"
+          method="post"
+          class="form-horizontal"
+          role="form"
+          id="sslUpload"
+          enctype="multipart/form-data">
+        <p>
+            <input name="ssl" type="file" id="sslFolder1" style="display:block; visibility:visible" value="Project Folder" /><br />
+            <button type="submit" id="sslFolder2">Upload SSL File</button>
+        </p>
+    </form>
+</section>

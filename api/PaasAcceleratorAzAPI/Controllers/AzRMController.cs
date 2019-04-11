@@ -17,12 +17,30 @@ namespace PaasAcceleratorAzAPI.Controllers
     {
         // GET api/values
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<string>>> GetAzSubscriptions()
+        public async Task<ActionResult<IEnumerable<string>>> GetAzResourceGroups()
         {
-            IEnumerable<string> res = await Utility.getSubscriptionList();
+            IEnumerable<string> subscriptions = await Utility.getSubscriptionList();
+            string e = subscriptions.FirstOrDefault();
+            string subscription = JObject.Parse(e)["value"][0]["subscriptionId"].ToString();
+            string resourceGrps = await Utility.getResourceGroupList(subscription);
+            List<string> resGrpList = new List<string>();
+            JObject jo = JObject.Parse(resourceGrps);
+            string jsonArray = JObject.Parse(resourceGrps)["value"].ToString();
+            JArray a = JArray.Parse(jsonArray);
 
-            return CreatedAtAction("GetAzSubscriptions", res);
+            foreach (JObject o in a.Children<JObject>())
+            {
+                foreach (JProperty p in o.Properties())
+                {
+                    string name = p.Name;
+                    var value = p.Value;
+                    if (name == "name") {
+                        resGrpList.Add(value.ToString());
+                    }
+                    
+                }
+            }
+            return CreatedAtAction("GetAzResourceGroups", resGrpList);
         }
-        
     }
 }

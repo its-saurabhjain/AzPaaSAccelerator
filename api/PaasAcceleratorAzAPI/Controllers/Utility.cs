@@ -12,8 +12,11 @@ namespace PaasAcceleratorAzAPI.Controllers
         internal static readonly HttpClient client = new HttpClient();
         internal static async Task<string> GetAADTokenRequest()
         {
-            string appId = "4cadb99f-0865-4826-b447-f17b54282f31";
-            string password = "fdee6d30-h8e6-d4d3-154f-3e96bd217a5c";
+            string appId = Environment.GetEnvironmentVariable("AzSPUserName");
+            string password = Environment.GetEnvironmentVariable("AzSPPassword");
+            //string tenant = Environment.GetEnvironmentVariable("AzTenant");
+            //string appId = "4cadb99f-0865-4826-b447-f17b54282f31";
+            //string password = "6dee6d30-88e6-44d3-a54f-ce96bd217a5c";
             string tenant = "f6558bc6-f9fe-49ec-947a-f104c43a40bd";
             string mgmtRes = "https://management.azure.com/";
             string resultContent;
@@ -57,6 +60,23 @@ namespace PaasAcceleratorAzAPI.Controllers
                 subscriptions.Add(resultContent.ToString());
             }
             return subscriptions;
+        }
+
+        internal static async Task<string> getResourceGroupList(string subscription)
+        {
+            string bearerToken = getBearerToken(await GetAADTokenRequest());
+
+            string sub = string.Format("https://management.azure.com/subscriptions/{0}/resourcegroups?api-version=2018-05-01", subscription);
+            string resultContent = "";
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://management.azure.com");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + bearerToken);
+                var result = await client.GetAsync(sub);
+                resultContent = await result.Content.ReadAsStringAsync();
+            }
+            return resultContent;
+
         }
     }
 }

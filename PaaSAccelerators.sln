@@ -56,7 +56,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAcceleratorEngine", "en
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppServiceMigrator", "presentation\AppServiceMigrator\AppServiceMigrator.csproj", "{D749B10E-7894-4684-92D8-FC5A925E9606}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerConfigurator", "agents\ContainerConfigurator\ContainerConfigurator.csproj", "{877B1ED8-7753-4AC0-87DD-AE6FBE494397}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContainerConfigurator", "agents\ContainerConfigurator\ContainerConfigurator.csproj", "{877B1ED8-7753-4AC0-87DD-AE6FBE494397}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceFabricMigrator", "presentation\ServiceFabricMigrator\ServiceFabricMigrator.csproj", "{774ABE13-B5E6-4A0D-835D-1BE046C02812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerEngine", "engine\DockerEngine\DockerEngine.csproj", "{A586AA13-694A-4432-8B59-98051E261BCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +92,14 @@ Global
 		{877B1ED8-7753-4AC0-87DD-AE6FBE494397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{877B1ED8-7753-4AC0-87DD-AE6FBE494397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{877B1ED8-7753-4AC0-87DD-AE6FBE494397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774ABE13-B5E6-4A0D-835D-1BE046C02812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774ABE13-B5E6-4A0D-835D-1BE046C02812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774ABE13-B5E6-4A0D-835D-1BE046C02812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774ABE13-B5E6-4A0D-835D-1BE046C02812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A586AA13-694A-4432-8B59-98051E261BCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A586AA13-694A-4432-8B59-98051E261BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A586AA13-694A-4432-8B59-98051E261BCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A586AA13-694A-4432-8B59-98051E261BCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +116,8 @@ Global
 		{7C212241-94E5-4FD8-8E5E-94D0D02EE497} = {5C91303C-7C9B-47E4-B3AC-8D5415070123}
 		{D749B10E-7894-4684-92D8-FC5A925E9606} = {3FEAC0C5-57C2-4D43-8DA3-421A057ADD0D}
 		{877B1ED8-7753-4AC0-87DD-AE6FBE494397} = {D2522DE6-134A-40EE-962C-84EDDA0F5A3C}
+		{774ABE13-B5E6-4A0D-835D-1BE046C02812} = {3FEAC0C5-57C2-4D43-8DA3-421A057ADD0D}
+		{A586AA13-694A-4432-8B59-98051E261BCB} = {5C91303C-7C9B-47E4-B3AC-8D5415070123}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0EA48EC-FEA7-4241-8171-5B14A9F2E446}
