@@ -35,3 +35,9 @@ C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\AppS
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Home\_BindSSLCertificate.g.cshtml.cs
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Configuration\AppConfiguration.g.cshtml.cs
 C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Monitor\AppMonitor.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\Tier1Configuration.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\Tier2Configuration.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\Tier3Configuration.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\Tier4Configuration.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\Tier5Configuration.g.cshtml.cs
+C:\PaaSAccelerators\presentation\AppServiceMigrator\obj\Debug\netcoreapp2.2\Razor\Views\Template\TemplateReview.g.cshtml.cs

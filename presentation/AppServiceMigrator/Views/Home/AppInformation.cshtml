@@ -58,8 +58,10 @@
                         @Html.RadioButton("deployment", "ContiniousDeployment", new { id = "deployment_continious", @class = "deployment" })
                         @Html.Label("deployment_continious", "ContiniousDeployment")<br />
                         @Html.RadioButton("deployment", "Template", new { id = "deployment_template", @class = "deployment" })
-                        @Html.Label("deployment_template", "Template")<br />
-
+                        @Html.Label("deployment_template", "Template")
+                        <input id="createTemplate" type="button" value='Create Template' onclick="location.href='@Url.Action("Tier1Configuration", "Template", new { id = 1 })'"
+                               style="border:0px;background:transparent;text-decoration:none;cursor:pointer;visibility:hidden" />
+                        <br />
                     </p>
                 </td>
                 <td align="left" style="height:26px;" valign="top">
@@ -97,6 +99,13 @@
                     }
                     else {
                         document.getElementById("gitRepoUrl").style.visibility = 'hidden';
+                    }
+                    if ($('#deployment_template').is(':checked')) {
+                        document.getElementById("createTemplate").style.visibility = 'visible';
+
+                    }
+                    else {
+                        document.getElementById("createTemplate").style.visibility = 'hidden';
                     }
                 });
             });
