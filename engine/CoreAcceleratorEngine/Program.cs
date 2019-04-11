@@ -56,20 +56,7 @@ namespace PaaSAcceleratorEngine
                     //Process Request using Powershell
                     if (message != "")
                     {
-                        JObject jo = JObject.Parse(message);
-                        string rg = jo["ResourceGrp"].ToString();
-                        string location = jo["location"].ToString().Replace(" ", "@");
-                        string appSvcPlan = jo["appSvcPlan"].ToString();
-                        string paasweb = jo["paaswebapp"].ToString();
-                        string zipFileServer = jo["appdirectory"].ToString();
-                        string ZipFileName = jo["zipFileName"].ToString();
-                        string scriptFile = @"C:\PaaSAccelerators\scripts\ps\appSvcDeploymentStandAloneApp.ps1" +
-                        " -resourceGroup " + rg +
-                        " -location " + location +
-                        " -appSvcPlan " + appSvcPlan +
-                        " -paaswebapp " + paasweb +
-                        " -zipFileServer " + zipFileServer +
-                        " -ZipFileName " + ZipFileName;
+                        string scriptFile = BuildPSFile(message);
                         Console.WriteLine(scriptFile);
                         RunPowershellScript(scriptFile);
                     }
@@ -84,6 +71,46 @@ namespace PaaSAcceleratorEngine
                 Console.ReadLine();
             }
 
+        }
+        static string BuildPSFile(string message) {
+            string scriptFile = string.Empty;
+            JObject jo = JObject.Parse(message);
+            string rg = jo["ResourceGrp"].ToString();
+            string location = jo["location"].ToString().Replace(" ", "@");
+            string appSvcPlan = jo["appSvcPlan"].ToString();
+            string paasweb = jo["paaswebapp"].ToString();
+            string deployment = jo["DeploymentType"].ToString();
+            Console.WriteLine(deployment);
+            switch (deployment) {
+                
+                case "Zip":
+                    
+                    string zipFileServer = jo["appdirectory"].ToString();
+                    string ZipFileName = jo["zipFileName"].ToString();
+                    scriptFile = @"C:\PaaSAccelerators\scripts\ps\appSvcDeploymentStandAloneApp.ps1" +
+                                   " -resourceGroup " + rg +
+                                   " -location " + location +
+                                   " -appSvcPlan " + appSvcPlan +
+                                   " -paaswebapp " + paasweb +
+                                   " -zipFileServer " + zipFileServer +
+                                   " -ZipFileName " + ZipFileName;
+                                   break;
+                case "GitRepo":
+                    string Container =   jo["Container"].ToString();
+                    string GitUrl = jo["GitUrl"].ToString();
+                    string AzCR = jo["AzCR"].ToString();
+                    string ContainerTag = jo["ContainerTag"].ToString();
+                    scriptFile = @"C:\PaaSAccelerators\scripts\ps\InstallAzureContainerInstance.ps1" +
+                                   " -resourceGroup " + rg +
+                                   " -location " + location +
+                                   " -appSvcPlan " + appSvcPlan +
+                                   " -paaswebapp " + paasweb +
+                                   " -gitUrl " + GitUrl +
+                                   " -acrName " + AzCR +
+                                   " -containerTag " + ContainerTag;
+                    break;
+            }
+           return scriptFile;
         }
     }
 }

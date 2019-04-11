@@ -27,7 +27,7 @@ namespace MigrationAcceleratorApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AppInformation(string appFramework, string deployment, string zipFile, string container)
+        public IActionResult AppInformation(string appFramework, string deployment, string zipFile, string container, string gitRepoUrl)
         {
             AppServiceConfiguration appSvcCfg = new AppServiceConfiguration();
             appSvcCfg.AppRuntime = appFramework;
@@ -35,9 +35,10 @@ namespace MigrationAcceleratorApp.Controllers
             appSvcCfg.appdirectory = _config.GetValue<string>("FileServer");
             appSvcCfg.zipFileName = zipFile;
             appSvcCfg.Container = container;
+            appSvcCfg.GitUrl = gitRepoUrl;
             string json = JsonConvert.SerializeObject(appSvcCfg);
             TempData["appInfo"] = json;
-            //save data to a property file
+            //Invoke API and get Resource Group List
             List<string> resourceGrpList = new List<string>();
             resourceGrpList.Add("PaaSAcceleratorTest");
             resourceGrpList.Add("AppServiceGroup");
@@ -49,13 +50,15 @@ namespace MigrationAcceleratorApp.Controllers
             return View("AzConfigurations", model);
         }
         [HttpPost]
-        public IActionResult AzConfigurations(string Subscription, string AzLocation, string AzAppSvcPlan, string AzAppName)
+        public IActionResult AzConfigurations(string Subscription, string AzLocation, string AzAppSvcPlan, string AzAppName, string AzContainerRegistry, string ContainerTag)
         {
             AppServiceConfiguration appSvcCfg = new AppServiceConfiguration();
             appSvcCfg.ResourceGrp = Subscription;
             appSvcCfg.location = AzLocation;
             appSvcCfg.appSvcPlan = AzAppSvcPlan;
             appSvcCfg.paaswebapp = AzAppName;
+            appSvcCfg.AzCR = AzContainerRegistry;
+            appSvcCfg.ContainerTag = ContainerTag;
             string json = (string)TempData["appInfo"];
             AppServiceConfiguration appSvcCfgTemp = JsonConvert.DeserializeObject<AppServiceConfiguration>(json);
             appSvcCfg.AppRuntime = appSvcCfgTemp.AppRuntime;
@@ -63,6 +66,7 @@ namespace MigrationAcceleratorApp.Controllers
             appSvcCfg.appdirectory = appSvcCfgTemp.appdirectory;
             appSvcCfg.zipFileName = appSvcCfgTemp.zipFileName;
             appSvcCfg.Container = appSvcCfgTemp.Container;
+            appSvcCfg.GitUrl = appSvcCfgTemp.GitUrl;
             return View("ReviewInformation", appSvcCfg);
         }
 
@@ -129,9 +133,7 @@ namespace MigrationAcceleratorApp.Controllers
             ViewBag.zipFile= zipFolder.FileName;
             TempData["zipFile"] = zipFolder.FileName;
 
-            string json = (string)TempData["appInfo"];
-            AppServiceConfiguration appSvcCfgTemp = JsonConvert.DeserializeObject<AppServiceConfiguration>(json);
-            return RedirectToAction("AppInformation", appSvcCfgTemp);
+            return RedirectToAction("AppInformation");
         }
     }
 }

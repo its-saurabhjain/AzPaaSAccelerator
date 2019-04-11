@@ -18,5 +18,8 @@ namespace MigrationAcceleratorApp.Models
         public string DeploymentType { get; set; }
         public string AppRuntime { get; set; }
         public string Container { get; set; }
+        public string ContainerTag { get; set; }
+        public string GitUrl { get; set; }
+        public string AzCR { get; set; }
     }
 }

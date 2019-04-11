@@ -24,29 +24,46 @@
 <div class="text-left">
     @using (Html.BeginForm("AzConfigurations", "Home", FormMethod.Post))
     {
-    <table border="0">
+    <table>
         <tr>
-            <td>@Html.Label("resGrp", "Azure Resource Group"):</td>
-            <td>@Html.DropDownListFor(m => m.Subscription, new SelectList(Model.ResourceGroupList), "Select Resource Group", new { id = "AzResGrp", @class = "form-dropdown" })</td>
-        </tr>
-        <tr>
-            <td>@Html.Label("Location", "Azure Location:")</td>
-            <td>@Html.TextBox("AzLocation", null, new { id = "AzLocation", @class = "form-textbox" })</td>
-        </tr>
-        <tr>
-            <td>@Html.Label("AppSvcPlan", "Azure App Service Plan:")</td>
-            <td>@Html.TextBox("AzAppSvcPlan", null, new { id = "AzAppSvcPlan", @class = "form-textbox" })</td>
-        </tr>
-        <tr>
-            <td>@Html.Label("AppName", "Azure Web App Name:")</td>
-            <td>@Html.TextBox("AzAppName", null, new { id = "AzAppName", @class = "form-textbox" })</td>
-        </tr>
-        <tr>
-            <td align="right" colspan="2">
-                <input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
+            <td align="left" style="height:26px;" valign="top">
+                <table border="1" id="AzAppService">
+                <tr>
+                    <td>@Html.Label("resGrp", "Azure Resource Group"):</td>
+                    <td>@Html.DropDownListFor(m => m.Subscription, new SelectList(Model.ResourceGroupList), "Select Resource Group", new { id = "AzResGrp", @class = "form-dropdown" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Location", "Azure Location:")</td>
+                    <td>@Html.TextBox("AzLocation", null, new { id = "AzLocation", @class = "form-textbox" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("AppSvcPlan", "Azure App Service Plan:")</td>
+                    <td>@Html.TextBox("AzAppSvcPlan", null, new { id = "AzAppSvcPlan", @class = "form-textbox" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("AppName", "Azure Web App Name:")</td>
+                    <td>@Html.TextBox("AzAppName", null, new { id = "AzAppName", @class = "form-textbox" })</td>
+                </tr>
+                <tr>
+                   <td align="right" colspan="2"><input id="submit" type="submit" value="Next" style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" /></td>
+                </tr>
+               </table>
+            </td>
+            <td align="left" style="height:26px;" valign="top">
+                <table>
+                    <tr>
+                        <td>@Html.Label("AzContainerRegistry", "Azure Container Registry:")</td>
+                        <td>@Html.TextBox("AzContainerRegistry", null, new { id = "AzContainerRegistry", @class = "form-textbox" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("ContainerTag", "Container Tag:")</td>
+                        <td>@Html.TextBox("ContainerTag", null, new { id = "ContainerTag", @class = "form-textbox" })</td>
+                    </tr>
+                </table>
             </td>
         </tr>
     </table>
+    
     }
 </div>
 

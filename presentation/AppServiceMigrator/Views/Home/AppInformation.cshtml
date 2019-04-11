@@ -2,13 +2,14 @@
 @{
     ViewData["Title"] = "App Migration Accelerator";
 }
-@{var filename = TempData["zipFile"];}
+@{
+    var zipfilename = TempData["zipFile"];
+    var gitRepo = TempData["gitRepo"];
+    }
 <h5>Collect Application Information</h5>
 <div class="text-center">
     @using (Html.BeginForm("AppInformation", "Home", FormMethod.Post))
     {
-        foreach (var item in Model.AppRuntime)
-        {
         <table border="0" style="width:1020px;">
             <tr>
                 <td align="left" style="height:26px;" valign="top">
@@ -31,20 +32,25 @@
                     <p style="margin-left:26px;">
                         @Html.RadioButton("deployment", "Zip", new { id = "deployment_Zip", @class = "deployment" })
                         @Html.Label("deployment_Zip", "Zip")&nbsp;&nbsp;
-                        @if (filename == null)
+                        @if (zipfilename == null)
                         {
                             <input id="submit" type="button" value="UploadZip" onclick="location.href='@Url.Action("_fileUploadForm", "Home", new { id = 1 })'"
                                    style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
                         }
                         else
                         {
-                            @Html.Label("deployment_zipFile", filename.ToString())
+                            <input id="submit" type="button" value='@zipfilename.ToString()' onclick="location.href='@Url.Action("_fileUploadForm", "Home", new { id = 1 })'"
+                                   style="border:0px;background:transparent;text-decoration:none;cursor:pointer;" />
                             @Html.Hidden("zipFile", @TempData["zipFile"])
                         }<br />
                         @Html.RadioButton("deployment", "FTP", new { id = "deployment_FTP", @class = "deployment" })
                         @Html.Label("deployment_FTP", "FTP")<br />
                         @Html.RadioButton("deployment", "LocalGit", new { id = "deployment_LGIT", @class = "deployment" })
                         @Html.Label("deployment_LocalGit", "LocalGit")<br />
+                        @Html.RadioButton("deployment", "GitRepo", new { id = "deployment_GIT", @class = "deployment" })
+                        @Html.Label("deployment_GIT", "GitRepo")
+                        <input id="gitRepoUrl" name="gitRepoUrl" type="text" value="https://github.com/Azure-Samples/aci-helloworld.git" style="visibility:hidden" />
+                        <br />
                         @Html.RadioButton("deployment", "AzureDevOps", new { id = "deployment_AzDevOps", @class = "deployment" })
                         @Html.Label("deployment_AzureDevOps", "AzureDevOps")
                     </p>
@@ -65,47 +71,29 @@
                 </td>
             </tr>
         </table>
-        }
+
     }
-    <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
-        <a href="#close" title="Close" class="modal-close-btn">X</a>
-        <div class="modal-content">
-            <div class="modal-body">
-                <form asp-controller="Home" asp-action="UploadFile" method="post" enctype="multipart/form-data">
-                    <p>
-                        <input name="zipFolder" type="file" id="zipFolderId" />
-                        <button type="submit" id="zipFolderId">Upload File</button>
-                    </p>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    @section Scripts {
+  @section Scripts {
         <script type="text/javascript">
-
+            var zipFile = "@zipfilename";
             $(function () { //Same as $(document).ready()
-                if()
-
-                $(document).on("click", ".deployment", function () {
-                    if ($('#deployment_Zip').is(':checked')) {
-                        console.log("the forms is valid");
+                if (zipFile != '') {
+                    $('#deployment_Zip').attr("Checked","checked");
                     }
                     else {
-                        console.log("the forms info is not valid");
+                        //console.log("the forms info is not valid");
+                }
+
+                $(document).on("click", ".deployment", function () {
+                    if ($('#deployment_GIT').is(':checked')) {
+                        document.getElementById("gitRepoUrl").style.visibility = 'visible';
+                    }
+                    else {
+                        document.getElementById("gitRepoUrl").style.visibility = 'hidden';
                     }
                 });
-                $('body').on('click', '.modal-link', function (e) {
-                    e.preventDefault();
-                    $("#modal-container").remove();
-                    $.get($(this).data("targeturl"), function (data) {
-                        $('<div id="modal-container" class="modal fade"><div class="modal-dialog modal-lg" style="width:500px;>' +
-                            '<div class="modal-content" id= "modalbody" >' +
-                            data +
-                            '</div></div></div>').modal();
-                    });
-                });
             });
+
         </script>
     }
 </div>
