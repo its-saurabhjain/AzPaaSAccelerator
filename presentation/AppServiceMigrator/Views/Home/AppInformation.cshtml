@@ -6,14 +6,31 @@
     var zipfilename = TempData["zipFile"];
     var gitRepo = TempData["gitRepo"];
     }
+<style>
+    #main {
+        width: 204px;
+        height: 204px;
+    }
+    .form-textbox {
+        width: 400px;
+        height: 20px;
+        border: 1px solid #000;
+    }
+
+    .form-dropdown {
+        width: 200px;
+        height: 25px;
+        border: 1px solid #000;
+    }
+</style>
 <b>Collect Application Details</b>
 <div class="text-center">
     @using (Html.BeginForm("AppInformation", "Home", FormMethod.Post))
     {
-        <table border="0" style="width:1020px;">
+        <table border="0" style="width:1080px;">
             <tr>
                 <td align="left" style="height:26px;" valign="top">
-                    Existing Application Framework/Runtime:
+                    Existing Application Framework/Runtime
                     <p style="margin-left:26px;">
                         @Html.RadioButton("appFramework", ".Net Framework 4.5", new { Checked = "checked", id = "appFramework_.net45" })
                         @Html.Label("appFramework_.net45", ".Net Framework 4.5")<br />
@@ -24,9 +41,18 @@
                         @Html.RadioButton("appFramework", "PHP", new { id = "appFramework_php" })
                         @Html.Label("appFramework_php", "PHP")<br />
                         @Html.RadioButton("appFramework", "Python", new { id = "appFramework_python" })
-                        @Html.Label("appFramework_python", "Python")<br/>
+                        @Html.Label("appFramework_python", "Python")<br />
                         @Html.RadioButton("appFramework", "Node", new { id = "appFramework_node" })
                         @Html.Label("appFramework_node", "Node")
+                    </p>
+                </td>
+                <td align="left" style="height:26px;" valign="top">
+                    Containerize Your Application
+                    <p style="margin-left:26px;">
+                        @Html.RadioButton("container", "Windows", new { id = "container_Windows", @class = "containerApp" })
+                        @Html.Label("container_Windows", "Windows")<br />
+                        @Html.RadioButton("container", "Linux", new { id = "container_Linux", @class = "containerApp" })
+                        @Html.Label("container_Linux", "Linux")
                     </p>
                 </td>
                 <td align="left" style="height:26px;" valign="top">
@@ -51,7 +77,7 @@
                         @Html.Label("deployment_LocalGit", "LocalGit")<br />
                         @Html.RadioButton("deployment", "GitRepo", new { id = "deployment_GIT", @class = "deployment" })
                         @Html.Label("deployment_GIT", "GitRepo")
-                        <input id="gitRepoUrl" name="gitRepoUrl" type="text" value="https://github.com/Azure-Samples/aci-helloworld.git" style="visibility:hidden" />
+                        <input id="gitRepoUrl" name="gitRepoUrl" type="text" value="https://github.com/Azure-Samples/aci-helloworld.git" class="form-textbox" style="visibility:hidden;" />
                         <br />
                         @Html.RadioButton("deployment", "AzureDevOps", new { id = "deployment_AzDevOps", @class = "deployment" })
                         @Html.Label("deployment_AzureDevOps", "AzureDevOps")<br />
@@ -64,15 +90,7 @@
                         <br />
                     </p>
                 </td>
-                <td align="left" style="height:26px;" valign="top">
-                    Containerize Your Application
-                    <p style="margin-left:26px;">
-                        @Html.RadioButton("container", "Windows", new { id = "container_Windows", @class = "containerApp" })
-                        @Html.Label("container_Windows", "Windows")<br />
-                        @Html.RadioButton("container", "Linux", new { id = "container_Linux", @class = "containerApp" })
-                        @Html.Label("container_Linux", "Linux")
-                    </p>
-                </td>
+
             </tr>
             <tr>
                 <td align="right" colspan="3">

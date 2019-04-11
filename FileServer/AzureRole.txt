@@ -1,0 +1,88 @@
+1.	Azure DevOps
+	- Develop and manage CI/CD process for different types of application and automate as many processes as possible
+        - Manage and support customer environments in Microsoft Azure cloud
+        - Consult customers on technical aspects of installation, sizing, scaling etc
+        - Support development teams in technical questions of continuous integration/continuous delivery
+        - Manage the full release process
+       Should have- 
+       o Experience in configuring, maintaining, and troubleshooting Microsoft based production systems
+       o ARM templates writing, setup automation for resources provisioning (Azure PowerShell), 
+       o Azure services- Azure App Service, Azure SQL, Azure Service Fabric, Azure Storage Account
+       o Understanding of load balancers, DNS, virtual networks and firewalls in cloud environment
+       o Setup monitoring (performance metrics, OMS/Azure Monitor)
+       o Azure Active Directory basics, Azure AD authentication, Users and groups Roles
+       o CI/CD for .NET projects experience, manage, develop, build CI/CD pipeline
+       o Understanding of Environments strategy
+
+2.	Azure Dev
+        - Design and development of .NET/.NET Core, Entity Framework/EF Core, ASP.NET/ASP.NET Core applications on Azure
+        - Design and Development of APIs with WebAPI, Swagger 2.0
+        - Develop and deploy using Azure Service Fabric (reliable service/ reliable actor) programming model and infrastructre
+        - Develop souluions on containerized platforms using docker/kubernetes
+        - Develop and Manage Azure Functions (serverless)
+        - Develop solution using RDBMS and Non-RDBMS (nosql)
+        - Migrate on premise applications to Azure PaaS
+        Should have-
+        o Very Strong programming background with C# & .Net and sound understanding of data structres 
+        o Good understanding of Azure services offering and hosting models (App Services/ Cloud Services/ VMs/ Storage)
+        o Experience in agile practises and TDD/BDD based development and testing tools
+        o Strong analysis and problem solving, code implementation and unit testing skills
+        o Application debugging experience: C#, PowerShell, JSON, JavaScript
+        o Experience in creation/deployment of containers (windows/Linux)
+        o Hands on using Azure Service Bus, Azure CosmosDB, Azure Cache for Redis
+        o Good understanding of Azure Fundamentals and principles of cloud computing
+        o Good experience in git and CI/CD
+
+3.	Azure Architect
+        - Performs technical planning, architecture development, and modification of specifications for Azure deployments & provide overall strategy
+        - Develop specifications for new products/services, applications, and service offerings. 
+        - Assesses the compatibility & integration of products/services proposed 
+        - Ensure services are built for performance, scalability, fault tolerance and security with reusable patterns.
+        - Monitor and identify performance trends and work with teams to improve performance
+        - Recommend best practises and standards for Azure migrations
+        - Architect solution based on Microservice Architecture using Azure PaaS with API gateway and integration with on-premise components
+        Should have-
+        o Deep knowledge and understanding of Microsoft Azure PaaS features
+        o Hands on experience on Azure App Service Model (Web Apps, Mobile Apps, API Apps and Web Jobs)
+        o Hands on experience on Azure storage services like SQL DB, Tables, Files and Blobs
+        o Hands on experience with Azure API Management Service
+        o Hands on experience in Microservice development on Azure using Container Service and Service Fabric
+        o Hands on experience of executing cloud native projects in Azure with DevOps using VSTS along with Microsoft as well as Open Source Tools
+        o Hands on experience on Azure Integration services like Service Bus and Event Hubs
+        o Good knowledge of Azure IaaS (VMs, VNET, NSG Rules, VPN Gateways and Express Route)
+        o Creating, deploying, configuring and scaling applications on Windows Azure PaaS
+        o Deep knowledge on Azure Cloud design patterns
+        o Deep knowledge on Microservice Design patterns
+        o Good knowledge of security concepts like firewall, ACL, NSG, AAD etc 
+  
+4.	Azure Cloud Native Developer
+        - Design, Develop and support Cloud-Native applications and API development using C#/.Net, Java and Spring Boot, NodeJS, and Containers
+        - Implemention of Microservice Architecture on Azure PaaS with an API gateway and integration with on-premise components
+        - Setup Kubernetes cluster using AKS, Azure Service Fabric, Azure Service Fabric mesh
+        Should have-
+        o Good understanding for 12 factor principles and should be able to design and implement solution using 12 factor app.
+        o Good understanding of Cloud computing concepts and technologies, such as IaaS/SaaS/PaaS, load balancing, Storage, etc.
+        o Hands on experience in implementing RESTful webservices and SOAP services in cloud
+        o Hands on experience in PaaS architecture and implementation using frameworks like .Net Core, Spring Boot, NodeJS, Spring Cloud, and Spring Dataflow, etc.
+        o Experience in UI development, integrating UI with REST service
+        o Experience with messaging frameworks (Service Bus, ActiveMQ, RabbitMQ, Kafka etc.).
+        o Experience using one or more NoSQL databases such as CosmosDB
+        o Experience with using development tools, including AzureDevOps, JIRA, GitHub, and Jenkins.
+        o Ability to write unit and end–to–end tests; debug and optimize existing and new code. 
+
+5.	Automation Engineer
+        - Design, architect, and build an application full stack in Azure
+        - Creation and maintenance of templates, deployment configuration files, scripts for deployment of applications Azure
+        - Deployment and troubleshooting of applications in Azure
+        Should have-
+        o Experience with application development, scripting on O/S, or using Azure IaaS APIs 
+        o Experience using Azure portal, CLI, and APIs
+        o Experience developing software (.NET, Python, Ruby, Java, Node.js)
+        o Experience developing solutions using infrastructure orchestration tools (Chef, Puppet, Salt automation tool)
+        o Experience developing solutions that combine data from APIs, endpoints, and databases
+        o Experience creating continuous integration pipelines (Jenkins, Maven CI etc)
+        o Experience working within an Agile team (Scrum, Kanban, Extreme Programming)
+        o Experience working with common application architectures (app/web servers, containerization)
+        o Strong practical knowledge of containerized applications as kubernetes, docker
+        o Setup monitoring (performance metrics, OMS/Azure Monitor)
+        o Understanding of Terraform and AWS Cloud Formation added advantage
