@@ -15,8 +15,6 @@ namespace PaasAcceleratorAzAPI.Controllers
             string appId = Environment.GetEnvironmentVariable("AzSPUserName");
             string password = Environment.GetEnvironmentVariable("AzSPPassword");
             //string tenant = Environment.GetEnvironmentVariable("AzTenant");
-            //string appId = "4cadb99f-0865-4826-b447-f17b54282f31";
-            //string password = "6dee6d30-88e6-44d3-a54f-ce96bd217a5c";
             string tenant = "f6558bc6-f9fe-49ec-947a-f104c43a40bd";
             string mgmtRes = "https://management.azure.com/";
             string resultContent;
